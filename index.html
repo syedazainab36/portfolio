@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <style>
+      * {
+        margin: 0%;
+      }
+
+      .home-wrapper {
+        height: 100vh;
+        width: 100%;
+        background-image: url(https://i.gifer.com/76YS.gif);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .home-wrapper .home-content {
+        /* height: 300px; 
+         width: 600px;
+         background: white;
+         opacity: 0.3;
+         filter: blur(5px);
+         backdrop-filter: blur(5px);
+         border-radius: 10px;   */
+        color: aliceblue;
+        text-align: center;
+        line-height: 90px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .home-wrapper h1 {
+        font-size: 70px;
+        font-family: "Libre Baskerville", serif;
+        /* font-family: 'Playfair Display', serif; */
+        animation: h1 0.8s ease-in 1;
+      }
+      @keyframes h1 {
+        from {
+          transform: translate(-500px);
+          opacity: 0;
+        }
+        to {
+          transform: translate(0);
+          opacity: 1;
+        }
+      }
+
+      .home-wrapper h2 {
+        animation: h2 0.8s ease 1;
+      }
+
+      @keyframes h2 {
+        from {
+          transform: translate(800px);
+          opacity: 0;
+        }
+        to {
+          transform: translate(0);
+          opacity: 1;
+        }
+      }
+
+      .home-content span {
+        color: crimson;
+        /* color: #007991; */
+      }
+      .home-content button {
+        height: 50px;
+        width: 200px;
+        background-color: transparent;
+        border: solid crimson;
+        color: whitesmoke;
+        font-size: 20px;
+        border-radius: 3px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        text-decoration: none;
+      }
+
+      .home-content button:hover {
+        animation: wave 0.7s ease 1;
+        /* transition: all 1s ease-out; */
+      }
+
+      @keyframes wave {
+        0%,
+        100% {
+          scale: 1;
+        }
+        50% {
+          scale: 1.5;
+          /* opacity: .5; */
+        }
+      }
+
+      /* MAIN CONTENT */
+      .main-content {
+        height: 900px;
+        width: 100%;
+        background-image: url(https://i.pinimg.com/originals/54/b9/79/54b9796099e988048cfe640a36586941.gif);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+      }
+
+      nav a {
+        font-size: 30px;
+        color: white;
+        font-family: "Libre Baskerville", serif;
+        text-decoration: none;
+        animation: h1 0.8s ease-in 1;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+
+      nav a:hover {
+        color: crimson;
+      }
+
+      nav a:nth-child(2) {
+        color: crimson;
+      }
+      nav {
+        position: sticky;
+        top: 0%;
+        /* left: ; */
+        display: flex;
+        justify-content: flex-end;
+        gap: 20px;
+        margin-right: 20px;
+        z-index: 1000;
+      }
+
+      .primary-para {
+        font-size: 25px;
+        color: white;
+      }
+
+      .about-content img {
+        width: 300px;
+        /* box-shadow: 2px 2px 1px whitesmoke ; */
+        filter: drop-shadow(2px 2px 0px whitesmoke);
+      }
+
+      .about-content {
+        width: 600px;
+        text-align: center;
+        position: relative;
+        left: 100px;
+        top: 50px;
+      }
+
+      .skill-container {
+        height: 500px;
+        width: 450px;
+        /* border: solid; */
+        position: relative;
+        top: -700px;
+        left: 1000px;
+        /* align-items: center; */
+        justify-content: center;
+        display: flex;
+      }
+
+      .para-skill {
+        font-size: 30px;
+        color: crimson;
+        animation: h1 0.8s ease-in 1;
+      }
+
+      .skill-img-container {
+        /* display: flex; */
+        animation: skill 0.7s ease 1;
+      }
+
+      @keyframes skill {
+        from {
+          scale: 0.5;
+        }
+        to {
+          scale: 1;
+          /* opacity: .5; */
+        }
+      }
+      .py {
+        height: 100px;
+        width: 100px;
+        /* border: solid; */
+        position: relative;
+        top: 60px;
+        right: 40px;
+        /* animation: skill1 0.7s ease 1; */
+        /* background-color: aqua; */
+      }
+
+      .sql {
+        height: 100px;
+        width: 100px;
+        /* border: solid; */
+        position: relative;
+        top: 8px;
+        left: 80px;
+        /* animation: skill1 0.7s ease 1; */
+      }
+
+      .web {
+        height: 100px;
+        width: 100px;
+        /* border: solid; */
+        position: relative;
+        top: -3px;
+        /* left: 30px; */
+        right: 40px;
+        /* animation: skill1 0.7s ease 1; */
+      }
+
+      .java {
+        height: 100px;
+        width: 100px;
+        /* border: solid; */
+        position: relative;
+        top: -230px;
+        left: 80px;
+        /* animation: skill1 0.7s ease 1; */
+      }
+
+      .css {
+        height: 100px;
+        width: 100px;
+        /* border: solid; */
+        position: relative;
+        top: 35px;
+        /* left: 30px; */
+        right: 40px;
+        /* animation: skill1 0.7s ease 1; */
+      }
+
+      .c {
+        height: 100px;
+        width: 100px;
+        /* border: solid; */
+        position: relative;
+        top: -130px;
+        left: -160px;
+        /* animation: skill1 0.7s ease 1; */
+      }
+
+      .vb {
+        height: 100px;
+        width: 100px;
+        /* border: solid; */
+        position: relative;
+        top: -492px;
+        left: -160px;
+        /* animation: skill1 0.7s ease 1; */
+      }
+
+      .py:hover {
+        animation: skill1 0.3s ease;
+      }
+      .sql:hover {
+        animation: skill1 0.3s ease;
+      }
+      .c:hover {
+        animation: skill1 0.3s ease;
+      }
+      .java:hover {
+        animation: skill1 0.3s ease;
+      }
+      .web:hover {
+        animation: skill1 0.3s ease;
+      }
+      .css:hover {
+        animation: skill1 0.3s ease;
+      }
+      .vb:hover {
+        animation: skill1 0.3s ease;
+      }
+
+      @keyframes skill1 {
+        from {
+          scale: 1;
+        }
+        to {
+          scale: 1.2;
+          /* opacity: .5; */
+        }
+      }
+
+      .project-container {
+        height: 3500px;
+        width: 100%;
+        background-color: burlywood;
+        position: relative;
+        /* margin-top: 20px; */
+        top: -413px;
+        /* left: 40%; */
+        /* left: 40%; */
+        display: flex;
+        /* align-items: center; */
+        justify-content: center;
+        gap: 50px;
+      }
+
+      /* .para-project{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            left: 40%;
+            right: 50%;
+        } */
+        .para-pro .h2{
+          text-align: center;
+          position: relative;
+          /* right: 100px; */
+          /* left: 500px; */
+          /* margin-top: 10px; */
+        
+        }
+
+      .p1-container {
+        height: 500px;
+        width: 750px;
+        border: solid;
+        background-image: linear-gradient(#642b73,#c6426e);
+        position: relative;
+        top: 100px;
+        left: -450px;
+        
+        /* display: inline-flex; */
+        /* justify-content: center; */
+        /* align-items: center; */
+      }
+
+      .p1-container .pro1{
+            /* position: relative; */
+            height: 400px;
+            width: 650px;
+            /* left: 600px; */
+            /* display: inline;
+            justify-content: center;
+            align-items: center; */
+            margin-top: 50px;
+            margin-left: 75px;
+        }
+      
+      .pro1 .img{
+        padding-left: 50px;
+      }
+
+      .proj-desc{
+            height: 350px;
+            width: 600px;
+            border: solid ;
+            position: relative;
+            left: 850px;
+            top: -400px;
+            /* display: f; */
+      }
+
+      .para-p1{
+        margin-top: 5px;
+      }
+
+      .proj-btns{
+        margin-top: 10px;
+        /* align-items: center; */
+        margin-left: 35%;
+        /* border-radius: 50px; */
+
+      }
+
+      .v:hover{
+        animation: btns 0.3s  ease;
+
+      }
+
+      .s:hover{
+        animation: btns 0.3s  ease;
+      }
+
+      @keyframes btns {
+        from{
+          scale: 1.0;
+        }
+        to{
+          scale: 1.2;
+        }   
+        
+       
+      }
+
+
+      .p2-container {
+        height: 500px;
+        width: 750px;
+        border: solid;
+        background-image: linear-gradient(#642b73,#c6426e);
+        position: relative;
+        top: 50px;
+        left: 700px;
+      }
+
+      .p2-container .pro2{
+            height: 400px;
+            width: 650px;
+            margin-top: 50px;
+            margin-left: 78px;
+        }
+
+      .proj-desc2{
+            height: 350px;
+            width: 600px;
+            border: solid ;
+            position: relative;
+            left: -690px;
+            top: -400px;
+            /* display: f; */
+      }
+
+      .para-p2{
+        margin-top: 5px;
+      }
+
+      .pro2 .img{
+        padding-left: 50px;
+      }
+
+
+      .p3-container {
+        height: 500px;
+        width: 750px;
+        border: solid;
+        background-image: linear-gradient(#642b73,#c6426e);
+        position: relative;
+        top: 100px;
+        left: -690px;
+        
+        
+      }
+
+      .p1-container .pro3{
+            height: 400px;
+            width: 650px;
+            margin-top: 50px;
+            margin-left: 75px;
+        }
+      
+      .pro3 .img{
+        padding-left: 50px;
+      }
+
+      .proj-desc3{
+            height: 350px;
+            width: 600px;
+            border: solid ;
+            position: relative;
+            left: 820px;
+            top: -400px;
+            /* display: f; */
+      }
+
+      .para-p1{
+        margin-top: 5px;
+      }
+
+
+      .p4-container {
+        height: 500px;
+        width: 750px;
+        border: solid;
+        background-image: linear-gradient(#642b73,#c6426e);
+        position: relative;
+        top: 50px;
+        left: 690px;
+      }
+
+      .p2-container .pro4{
+            height: 400px;
+            width: 650px;
+            margin-top: 50px;
+            margin-left: 78px;
+        }
+
+      .proj-desc4{
+            height: 350px;
+            width: 600px;
+            border: solid ;
+            position: relative;
+            left: -690px;
+            top: -400px;
+            /* display: f; */
+      }
+
+      .para-p4{
+        margin-top: 5px;
+      }
+
+      .pro4 .img{
+        padding-left: 50px;
+      }
+
+      /* CONTACT */
+
+      .contact-main{
+        height: 880px;
+        width: 100%;
+        background-image: url(https://images.saymedia-content.com/.image/t_share/MTk0NTIwMDQ4MzU2ODI4Nzgy/how-to-create-cool-website-backgrounds-the-ultimate-guide.gif);
+        /* border: solid; */
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-top: -415px;
+      }
+
+      /* .con-sub{
+        display: flex;
+        align-items: center;
+        justify-self: center;
+      } */
+      .con-form{
+        /* display: flex;
+        align-items: center;
+        justify-content: center; */
+        /* position: relative;
+        left: 50%; */
+        /* margin-top: 50px; */
+        padding-top: 70px;
+        padding-left: 42%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Home Starts -->
+
+    <div class="home-wrapper" id="home">
+      <div class="home-content">
+        <h1>Hello, I'm <span>ZAINAB</span></h1>
+        <h2>I'm a Full Stack Web Developer</h2>
+        <a href="#about"
+          ><button style="text-decoration: none">
+            Explore more
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-arrow-down-circle"
+              viewBox="0 0 16 16"
+              style="text-decoration: none"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z"
+              />
+            </svg></button
+        ></a>
+      </div>
+    </div>
+    <!-- Home ENDS -->
+
+    <!-- Main-Content Starts -->
+    <div class="main-content">
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About me</a>
+        <a href="#skill">Skills</a>
+        <a href="#Project">Project</a>
+        <a href="Syeda_zainab_Res.docx" target="_blank">Resume</a>
+      </nav>
+      <div class="about-content" id="about">
+        <img src="zainab-removebg-preview.png" alt="" height="350px"/>
+        <p class="primary-para">
+          Greetings, I am zainab, My Education is bsc(pme) and i have 
+          one year experience too in MNC Electronics Company. I just love
+          to do craft,drawing,i want do new things in my life so i came 
+          here to do course i hope i learn more from here and my teachers 
+          also fully supportive to .i just love to do job in IT Company
+          so only i came but not for job and also i want to learn more 
+          knowlegde about python, sql, web development and apti and many 
+          things which i hv dont know . thank you for supportive teachers
+          and also my parents and very thankfull to everything.
+          
+
+        </p>
+      </div>
+      <!-- SKILLS -->
+      <div class="skill-container" id="skill">
+        <p class="para-skill">Skills</p>
+        <div class="skill-img-container">
+          <div class="py">
+            <a
+              href="file:///C:/Users/syeds/OneDrive/Desktop/web%20tech/project1/portfolio/python.html"
+              target="_blank"
+              ><img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYQXgks-BG59lC7s4M_G3s0Hv79oILhtaotCMzGmlf4APe3tX3pB_hIhX9YKpR_ULtMvY&usqp=CAU"
+                alt=""
+                height="100px"
+                width="100px"
+            /></a>
+            <p align="center" style="font-size: 20px; color: darkolivegreen">
+              Python
+            </p>
+          </div>
+          <div class="sql">
+            <a
+              href="file:///C:/Users/syeds/OneDrive/Desktop/web%20tech/project1/portfolio/sql.html"
+              target="_blank"
+              ><img
+                src="https://miro.medium.com/v2/resize:fit:1200/1*RK50G3R8xeRtANWAkJE6Mw.png"
+                alt=""
+                height="100px"
+                width="100px"
+            /></a>
+            <p align="center" style="font-size: 20px; color: darkolivegreen">
+              SQL
+            </p>
+          </div>
+          <div class="web">
+            <a
+              href="file:///C:/Users/syeds/OneDrive/Desktop/web%20tech/project1/portfolio/html.html"
+              target="_blank"
+              ><img
+                src="https://static.wikia.nocookie.net/coding-help/images/0/02/174854.png/revision/latest?cb=20210514134203"
+                alt=""
+                height="100px"
+                width="100px"
+            /></a>
+            <p align="center" style="font-size: 20px; color: darkolivegreen">
+              HTML
+            </p>
+          </div>
+          <div class="css">
+            <a
+              href="file:///C:/Users/syeds/OneDrive/Desktop/web%20tech/project1/portfolio/css.html"
+              target="_blank"
+              ><img
+                src="https://diziglobalsolution.com/wp-content/uploads/2023/04/logo-css-3-1536.png"
+                alt=""
+                height="100px"
+                width="100px"
+            /></a>
+            <p align="center" style="font-size: 20px; color: darkolivegreen">
+              CSS
+            </p>
+          </div>
+          <div class="c">
+            <a
+              href="file:///C:/Users/syeds/OneDrive/Desktop/web%20tech/project1/portfolio/c.html"
+              target="_blank"
+              ><img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/C_Programming_Language.svg/1853px-C_Programming_Language.svg.png"
+                alt=""
+                height="100px"
+                width="100px"
+            /></a>
+            <p align="center" style="font-size: 20px; color: darkolivegreen">
+              C
+            </p>
+          </div>
+          <div class="java">
+            <a
+              href="file:///C:/Users/syeds/OneDrive/Desktop/web%20tech/project1/portfolio/java.html"
+              target="_blank"
+              ><img
+                src="https://1000logos.net/wp-content/uploads/2020/09/Java-Emblem.jpg"
+                alt=""
+                height="100px"
+                width="100px"
+            /></a>
+            <p align="center" style="font-size: 20px; color: darkolivegreen">
+              Java
+            </p>
+          </div>
+          <div class="vb">
+            <a
+              href="file:///C:/Users/syeds/OneDrive/Desktop/web%20tech/project1/portfolio/vb.html"
+              target="_blank"
+              ><img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKQD58SqUZUYraIQpmuS-Qf98AHKz_vejeWKol0iUeNkuctdPcb4ecWkjnqMUZavjX7tc&usqp=CAU"
+                alt=""
+                height="100px"
+                width="100px"
+            /></a>
+            <p align="center" style="font-size: 20px; color: darkolivegreen">
+              VB
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECTS -->
+      <div class="project-container" id="Project">
+        <!-- <h1>Projects</h1> -->
+        <div class="para-pro"><h2 style="font-size: 40px; color: darkred;" align="center">Projects</h2></div>
+          <!-- <p class="para=project" style="color: darkred; font-size: 40px">
+            Project
+          </p> -->
+
+          <!-- P1 -->
+            <div class="p1-container">
+              <div class="pro1">
+              <img src="Screenshot 2023-12-04 132240.png" alt="" height="380px" width="600px" />
+            </div>
+          
+            <div class="proj-desc">
+              <!-- <h2><title>Attendence Monitoring System</title></h2> -->
+              <h2 align="center" style="color:maroon;">SYMTTEN</h2>
+              <p class="para-p1">The Smytten app is your first step into the world of trial packs and discovering the best brands. Divided into two sections, the app lets you explore the curated Trial feed and place a trial order using your six trial points. Try before you buy! 
+               <br>
+               <br>
+               Purpose:- 
+               To get free beauty and personal care samples for trial, simply sign up on Smytten's website and create an account. Upon joining, you will receive trial points that can be redeemed for up to six trial beauty products of your choice from our vast selection.
+               </p>
+              <div class="proj-btns">
+                <a href=""><button class="v" style="border-radius: 5px;background-color:aliceblue;">View App</button></a>
+                <a href=""><button class="s" style="border-radius: 5px;background-color:aliceblue;">Scource Code</button></a>
+              </div>
+            </div>
+
+            <!-- P2 -->
+            <div class="p2-container">
+              <div class="pro2">
+              <img src="Screenshot 2023-12-04 132413.png" alt="" height="380px" width="600px" />
+            </div>
+          
+            <div class="proj-desc2">
+              <!-- <h2><title>Attendence Monitoring System</title></h2> -->
+              <h2 align="center" style="color:maroon;">LATH MACHINE</h2>
+              <p class="para-p2">A lathe is a machine tool that rotates a workpiece about an axis of rotation to perform various operations, such as cutting, sanding, knurling, drilling, deformation, facing, and turning, with tools that are applied to the workpiece to create an object with symmetry about that axis.
+                <br>
+                <br>
+                Lathe machines come in various sizes and configurations, from small bench lathes used for hobbyists and small workshops to large industrial lathes capable of handling heavy-duty machining. The type of lathe and its features depend on the specific machining requirements.
+                <br>
+                <br>
+                Operators use lathes to create cylindrical parts, turn metal, wood, or other materials, and produce objects with a variety of shapes and sizes. CNC (Computer Numerical Control) lathes have become increasingly common, allowing for automated and precise control of the machining process.
+               </p>
+              <div class="proj-btns">
+                <a href=""><button class="v" style="border-radius: 5px;background-color:aliceblue;">View App</button></a>
+                <a href=""><button class="s" style="border-radius: 5px;background-color:aliceblue;">Scource Code</button></a>
+              </div>
+            </div>
+
+
+            <!-- P3 -->
+            <div class="p3-container">
+              <div class="pro3">
+              <img src="Screenshot 2023-12-04 131744.png" alt="" height="380px" width="600px" />
+            </div>
+          
+            <div class="proj-desc3">
+              <!-- <h2><title>Attendence Monitoring System</title></h2> -->
+              <h2 align="center" style="color:maroon;">Flikart Clone</h2>
+              <p class="para-p4">A "Flipkart clone" typically refers to a website or application that replicates the functionality and features of the popular Indian e-commerce platform, Flipkart. Developing a Flipkart clone involves creating an online shopping platform with similar features, user interface, and functionality for buying and selling products.
+               </p>
+              <div class="proj-btns">
+                <a href=""><button class="v" style="border-radius: 5px;background-color:aliceblue;">View App</button></a>
+                <a href=""><button class="s" style="border-radius: 5px;background-color:aliceblue;">Scource Code</button></a>
+              </div>
+            </div>
+        
+
+            <!-- P4 -->
+            <div class="p4-container">
+              <div class="pro4">
+              <img src="Screenshot 2023-12-04 131949.png" alt="" height="380px" width="600px" />
+            </div>
+          
+            <div class="proj-desc4">
+              <!-- <h2><title>Attendence Monitoring System</title></h2> -->
+              <h2 align="center" style="color:maroon;">Portfolio</h2>
+              <p class="para-p4">A portfolio typically refers to a collection or showcase of work, achievements, skills, and experiences that an individual or entity has accumulated. Portfolios are commonly used in various fields to demonstrate one's capabilities and accomplishments. Here are a few contexts in which the term "portfolio" might be used:
+               <br>
+               <br>
+               Purpose:- 
+               In a professional setting, individuals often create portfolios to showcase their work, projects, and achievements. This is common in fields such as graphic design, writing, web development, and other creative or technical professions.
+               Content: A professional portfolio might include samples of work, resumes, cover letters, references, and any other relevant documents that highlight skills and accomplishments.
+               </p>
+              <div class="proj-btns">
+                <a href=""><button class="v" style="border-radius: 5px;background-color:aliceblue;">View App</button></a>
+                <a href=""><button class="s" style="border-radius: 5px;background-color:aliceblue;">Scource Code</button></a>
+              </div>
+            </div>
+
+
+        </div>
+      </div>
+      <!-- Project Ends -->
+    </div>
+    </div>
+    </div>
+      <!-- Main-Content ENDS -->
+
+      <!-- Contact Details STARTS -->
+     <div class="contact-main">
+      <!-- <div class="con-sub"> -->
+        <!-- <form action="" class="con-form">
+          <label for="firstname">Firstname: </label>
+          <input type="text" name="" id="firstname"><br>
+          <label for="lastname">Lastname:  
+          </label>
+          <input type="text" name="" id="lastname"><br>
+          <label for="mail">e-mail</label>
+          <input type="text" name="" id="mail"><br>
+          <label for="number">Ph.no</label>
+          <input type="number" name="" id="number"><br> -->
+
+          <form action="" align="center" class="con-form">
+            <fieldset style="width: fit-content;">
+                <!-- to view the form name within the border we use the legend tag -->
+                <legend><h1>Contact-Details</h1></legend>
+                <label for="uname">Firstname:</label><br>
+                <input type="text" name="" id="uname"><br><br>
+                <label for="pass">Lastname:</label><br>
+                <input type="text" name="" id="pass"><br><br>
+                <label for="mail">E-mail:</label><br>
+                <input type="text" name="" id="mail"><br><br>
+                <label for="number">Ph.no:</label><br>
+                <input type="text" name="" id="number"><br><br>
+                <textarea name="" id="" cols="30" rows="10" placeholder="Comments:"></textarea><br>
+                <input type="button" value="Submit" style="border-radius: 5px;">        
+          </fieldset>
+        </form>
+       
+      <!-- </div> -->
+     </div>
+  </body>
+</html>
